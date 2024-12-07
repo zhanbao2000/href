@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>href生成</title>
+    <script>
+        function navigate() {
+            const url = document.getElementById('urlInput').value;
+            window.location.href = `result.html?url=${encodeURIComponent(url)}`;
+        }
+    </script>
+</head>
+<body>
+    <h1>输入想要生成的网址</h1>
+    <input type="text" id="urlInput" placeholder="https://example.com">
+    <button onclick="navigate()">生成</button>
+</body>
+</html>
