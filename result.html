@@ -5,11 +5,13 @@
     <title>生成结果</title>
     <script>
         window.onload = function() {
-            const params = new URLSearchParams(window.location.search);
-            const url = params.get('url');
+           const params = new URLSearchParams(window.location.search);
+            let url = params.get('url');
+            if (url && !url.match(/^https?:\/\//)) {
+                url = 'https://' + url;
+            }
             document.getElementById('link').href = url;
-            document.getElementById('link').textContent = url;
-        }
+            document.getElementById('link').textContent = url;        }
     </script>
 </head>
 <body>
